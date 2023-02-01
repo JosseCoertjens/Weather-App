@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7fbd6e1d8e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="weatherApp">
+      <div class="container">
+        <i class="fa-solid fa-cloud weatherIconBig"></i>
+        <div class="row what-city">
+          <div class="col-4"></div>
+          <div class="col-7">
+            <form class="form-wrapper">
+              <input
+                type="search"
+                class="city-input"
+                placeholder="Search for city..."
+              />
+              <button type="submit" class="search-icon">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              </button>
+              <div class="col-1">
+                <button
+                  type="button"
+                  class="btn btn-info current-location-button"
+                >
+                  <i
+                    class="fa-solid fa-location-crosshairs current-location-icon"
+                  ></i>
+                </button>
+              </div>
+            </form>
+            <div class="current-location">
+              <span id="city"> Antwerp, </span>
+              <span id="country"> Belgium </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row infotemp">
+          <div class="col-4"></div>
+          <div class="col-3 temp">11°C</div>
+          <div class="col-5">
+            <ul class="info">
+              <li class="date">12 jan 2023</li>
+              <li class="time">14:04</li>
+              <li class="weather">Rain</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="forcast-nxt-days">Forcast next days</div>
+        <div class="row forcast">
+          <div class="col-sm days">
+            <i class="fa-solid fa-cloud-sun"></i>
+            <br />
+            11°C / 17 °C <br />
+            Monday
+          </div>
+          <div class="col-sm days">
+            <i class="fa-solid fa-cloud weatherIcon"> </i>
+            <br />
+            11°C / 17 °C <br />Tuesday
+          </div>
+          <div class="col-sm days">
+            <i class="fa-solid fa-cloud-sun"></i>
+            <br />
+            11°C / 17 °C <br />Wednesday
+          </div>
+          <div class="col-sm days">
+            <i class="fa-solid fa-sun"></i>
+            <br />
+            11°C / 17 °C <br />
+            Thursday
+          </div>
+          <div class="col-sm days">
+            <i class="fa-solid fa-cloud weatherIcon"> </i>
+            <br />
+            11°C / 17 °C <br />
+            Friday
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
