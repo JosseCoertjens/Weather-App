@@ -105,3 +105,8 @@ input:focus {
   background: #53a8b6;
   padding: 10px;
 }
+
+.coded-by {
+  text-align: center;
+  color: #fff;
+}
