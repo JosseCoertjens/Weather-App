@@ -67,6 +67,15 @@ function changeCity(event) {
     let currentWeatherDescription = document.querySelector(".weather");
     currentWeatherDescription.innerHTML = weatherDescription;
 
+    console.log(response);
+
+    let weatherIcon = response.data.weather[0].icon;
+    let currentWeatherIcon = document.querySelector("#weatherIcon");
+    currentWeatherIcon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
+    );
+  }
   axios.get(apiUrl).then(displayWeather);
 }
 
@@ -93,6 +102,13 @@ function changeCurrentLocation() {
       let weatherDescription = position.data.weather[0].description;
       let currentWeatherDescription = document.querySelector(".weather");
       currentWeatherDescription.innerHTML = weatherDescription;
+
+      let weatherIcon = position.data.weather[0].icon;
+      let currentWeatherIcon = document.querySelector("#weatherIcon");
+      currentWeatherIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
+      );
     }
 
     let unit = `metric`;
