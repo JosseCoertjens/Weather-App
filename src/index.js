@@ -54,10 +54,9 @@ function changeCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=${unit}&appid=${apiKey}`;
 
   function displayWeather(response) {
-    let temp = Math.round(response.data.main.temp);
-
-    let currentTemp = document.querySelector(".temp");
-    currentTemp.innerHTML = `${temp}°C`;
+    celsiusTemperature = Math.round(response.data.main.temp);
+    let currentTemp = document.querySelector("#temp-celsius");
+    currentTemp.innerHTML = `${celsiusTemperature}`;
 
     let country = response.data.sys.country;
     let currentCountry = document.querySelector("#country");
@@ -66,8 +65,6 @@ function changeCity(event) {
     let weatherDescription = response.data.weather[0].description;
     let currentWeatherDescription = document.querySelector(".weather");
     currentWeatherDescription.innerHTML = weatherDescription;
-
-    console.log(response);
 
     let weatherIcon = response.data.weather[0].icon;
     let currentWeatherIcon = document.querySelector("#weatherIcon");
@@ -91,9 +88,9 @@ function changeCurrentLocation() {
       let currentCity = document.querySelector("#city");
       currentCity.innerHTML = city;
 
-      let temp = Math.round(position.data.main.temp);
-      let currentTemp = document.querySelector(".temp");
-      currentTemp.innerHTML = `${temp}°C`;
+      celsiusTemperature = Math.round(position.data.main.temp);
+      let currentTemp = document.querySelector("#temp-celsius");
+      currentTemp.innerHTML = `${celsiusTemperature}`;
 
       let country = position.data.sys.country;
       let currentCountry = document.querySelector("#country");
@@ -125,3 +122,23 @@ function changeCurrentLocation() {
 
 let currentLocationButton = document.querySelector(".current-location-button");
 currentLocationButton.addEventListener("click", changeCurrentLocation);
+
+function changeCurrentUnit(event) {
+  event.preventDefault();
+
+  let temperatureCelsius = document.querySelector("#temp-celsius");
+  let formula = Math.round((celsiusTemperature * 9) / 5 + 32);
+  let temperatureFahrenhait = `${formula}`;
+  temperatureCelsius.innerHTML = temperatureFahrenhait;
+
+  let currentUnit = document.querySelector("#unit");
+  currentUnit.innerHTML = `°F`;
+
+  let changeUnit = document.querySelector("#change-unit");
+  changeUnit.innerHTML = null;
+}
+
+let celsiusTemperature = null;
+
+let changeUnit = document.querySelector("#change-unit");
+changeUnit.addEventListener("click", changeCurrentUnit);
