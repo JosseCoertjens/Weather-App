@@ -7,14 +7,6 @@
   padding: 20px;
 }
 
-.weatherIconBig {
-  font-size: 440px;
-  color: #53a8b6;
-  opacity: 20%;
-  position: fixed;
-  top: 0;
-}
-
 .form-wrapper {
   margin-top: 200px;
   background: none;
@@ -74,6 +66,12 @@ input:focus {
 
 #country {
   opacity: 50%;
+}
+
+#weatherIcon {
+  opacity: 50%;
+  width: 130%;
+  filter: grayscale(100%);
 }
 
 .infotemp {
