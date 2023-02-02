@@ -81,12 +81,23 @@ input:focus {
 }
 
 .temp {
-  font-size: 80px;
+  font-size: 70px;
+  padding: none;
+}
+
+.change-unit {
+  font-size: 20px;
+  vertical-align: text-top;
+  color: #53a8b6;
+}
+
+.change-unit:hover {
+  color: #5585b5;
 }
 
 .info {
   list-style: none;
-  padding-top: 26px;
+  padding: 16px 0 0 0;
 }
 
 .forcast-nxt-days {

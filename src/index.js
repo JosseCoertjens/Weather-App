@@ -37,7 +37,7 @@ let hour = now.getHours();
 let minutes = now.getMinutes();
 
 today.innerHTML = ` ${date} ${month}, ${year}`;
-time.innerHTML = ` ${hour}:${minutes}`;
+time.innerHTML = ` last updated: ${hour}:${minutes}`;
 
 // When a user searches for a city:
 //display the name and the current temperature of the city.
