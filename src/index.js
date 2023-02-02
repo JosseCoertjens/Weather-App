@@ -62,7 +62,10 @@ function changeCity(event) {
     let country = response.data.sys.country;
     let currentCountry = document.querySelector("#country");
     currentCountry.innerHTML = country;
-  }
+
+    let weatherDescription = response.data.weather[0].description;
+    let currentWeatherDescription = document.querySelector(".weather");
+    currentWeatherDescription.innerHTML = weatherDescription;
 
   axios.get(apiUrl).then(displayWeather);
 }
@@ -86,6 +89,10 @@ function changeCurrentLocation() {
       let country = position.data.sys.country;
       let currentCountry = document.querySelector("#country");
       currentCountry.innerHTML = country;
+
+      let weatherDescription = position.data.weather[0].description;
+      let currentWeatherDescription = document.querySelector(".weather");
+      currentWeatherDescription.innerHTML = weatherDescription;
     }
 
     let unit = `metric`;
